@@ -1,4 +1,4 @@
-\# Análise de Vendas de um E-commerce Brasileiro
+\# 📊 Análise de Vendas de um E-commerce Brasileiro
 
 
 
@@ -10,7 +10,17 @@ O projeto foi desenvolvido seguindo a arquitetura \*\*Medallion (Bronze → Silv
 
 
 
-Fonte dos dados:
+---
+
+
+
+\## 📂 Fonte dos Dados
+
+
+
+Dataset disponível em:
+
+
 
 https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
@@ -20,41 +30,19 @@ https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
 
 
-\## Objetivo do Projeto
+\## 🎯 Objetivo do Projeto
 
 
 
-\- Estruturar um pipeline de dados do início ao fim
+\- Estruturar um pipeline de dados do início ao fim  
 
-\- Realizar limpeza e preparação de dados com Python
+\- Realizar limpeza e preparação de dados com Python  
 
-\- Criar KPIs e análises com SQL (PostgreSQL)
+\- Criar KPIs e análises com SQL (PostgreSQL)  
 
-\- Desenvolver um dashboard executivo no Power BI
+\- Desenvolver um dashboard executivo no Power BI  
 
-\- Documentar todo o processo de forma reproduzível
-
-
-
----
-
-
-
-\## Perguntas de Negócio Respondidas
-
-
-
-\- Qual o faturamento total do e-commerce?
-
-\- Quantos pedidos foram realizados?
-
-\- Qual o ticket médio por pedido?
-
-\- Como o faturamento evoluiu ao longo do tempo?
-
-\- Quais estados concentram maior receita?
-
-\- Quais categorias de produtos mais faturam?
+\- Documentar todo o processo de forma reproduzível  
 
 
 
@@ -62,41 +50,21 @@ https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
 
 
-\## Ferramentas Utilizadas
+\## ❓ Perguntas de Negócio Respondidas
 
 
 
-\- Python (Pandas)
+\- Qual o faturamento total do e-commerce?  
 
-\- Jupyter Notebook (Google Colab)
+\- Quantos pedidos foram realizados?  
 
-\- SQL (PostgreSQL)
+\- Qual o ticket médio por pedido?  
 
-\- DBeaver
+\- Como o faturamento evoluiu ao longo do tempo?  
 
-\- Power BI
+\- Quais estados concentram maior receita?  
 
-\- Git e GitHub
-
-
-
----
-
-
-
-\## Arquitetura de Dados (Medallion)
-
-
-
-\- \*\*Bronze\*\*: dados brutos (não versionados), sem transformações + referência ao Kaggle
-
-\- \*\*Silver\*\*: dados tratados (saídas do notebook / CSV tratados), limpos e padronizados
-
-\- \*\*Gold\*\*: dados agregados e prontos para análise e visualização (tabelas/queries finais para BI + dashboard)
-
-
-
-Cada camada possui sua própria documentação.
+\- Quais categorias de produtos mais faturam?  
 
 
 
@@ -104,55 +72,21 @@ Cada camada possui sua própria documentação.
 
 
 
-\## Estrutura do Repositório
+\## 🛠️ Ferramentas Utilizadas
 
 
 
-\- ecommerce-analytics/
+\- Python (Pandas)  
 
-\-│
+\- Jupyter Notebook (Google Colab)  
 
-\-├── 01\_bronze/
+\- SQL (PostgreSQL)  
 
-\-│ ├── README.md
+\- DBeaver  
 
-\-│ └── olist\_raw/ # dados brutos (não versionados)
+\- Power BI  
 
-\-│
-
-\-├── 02\_silver/
-
-\-│ ├── README.md
-
-\-│ ├── olist\_processed/ # dados tratados
-
-\-│ └── notebooks/
-
-\-│ └── 01\_eda\_limpeza.ipynb
-
-\-│
-
-\-├── 03\_gold/
-
-\-│ ├── README.md
-
-\-│ ├── sql/
-
-\-│ │ ├── 01\_kpis\_gerais.sql
-
-\-│ │ ├── 02\_receita\_mensal.sql
-
-\-│ │ └── 03\_receita\_por\_estado.sql
-
-\-│ └── power\_bi/
-
-\-│ └── dashboard.pbix
-
-\-│
-
-\-├── .gitignore
-
-\-└── README.md
+\- Git e GitHub  
 
 
 
@@ -160,19 +94,87 @@ Cada camada possui sua própria documentação.
 
 
 
-\## Principais Resultados
+\## 📁 Estrutura do Projeto
 
 
 
-\- Receita total: ~R$ 444 milhões
+ecommerce-analytics/
 
-\- Total de pedidos: ~98,7 mil
+│
 
-\- Ticket médio por pedido: ~R$ 4,5 mil
+├── 01\_bronze/ # Camada de dados brutos (Raw)
 
-\- Estado com maior faturamento: São Paulo
+│ ├── olist\_raw/ # Arquivos CSV originais Kaggle (não versionados)
 
-\- Categoria líder em faturamento: Health \& Beauty
+│ │ ├── olist\_customers\_dataset.csv
+
+│ │ ├── olist\_orders\_dataset.csv
+
+│ │ ├── olist\_order\_items\_dataset.csv
+
+│ │ ├── olist\_order\_payments\_dataset.csv
+
+│ │ ├── olist\_products\_dataset.csv
+
+│ │ └── product\_category\_name\_translation.csv
+
+│ │
+
+│ ├── .gitkeep # Mantém a estrutura versionada
+
+│ └── README.md # Documentação da camada Bronze
+
+│
+
+├── 02\_silver/ # Camada de dados tratados
+
+│ ├── notebooks/ # Notebooks de análise e limpeza
+
+│ │ └── 01\_eda\_limpeza.ipynb
+
+│ │
+
+│ ├── olist\_processed/ # Dados processados e padronizados
+
+│ │ ├── fato\_itens.csv
+
+│ │ ├── kpi\_categoria.csv
+
+│ │ ├── kpi\_estado.csv
+
+│ │ └── kpi\_mensal.csv
+
+│ │
+
+│ └── README.md # Documentação da camada Silver
+
+│
+
+├── 03\_gold/ # Camada analítica final
+
+│ ├── sql/ # Scripts para geração de KPIs
+
+│ │ ├── 01\_kpis\_gerais.sql
+
+│ │ ├── 02\_receita\_mensal.sql
+
+│ │ └── 03\_receita\_por\_estado.sql
+
+│ │
+
+│ ├── power\_bi/ # Dashboard final
+
+│ │ └── dashboard.pbix
+
+│ │
+
+│ └── README.md # Documentação da camada Gold
+
+│
+
+├── .gitignore # Arquivos ignorados pelo Git
+
+└── README.md # Documentação principal do projeto
 
 
 
@@ -180,21 +182,67 @@ Cada camada possui sua própria documentação.
 
 
 
-\## Como Reproduzir o Projeto
+\## 📊 Principais Resultados
 
 
 
-1\. Baixe os dados brutos no Kaggle
+\- Receita total: aproximadamente \*\*R$ 444 milhões\*\*  
 
-2\. Coloque os CSVs na pasta `01\_bronze/olist\_raw`
+\- Total de pedidos: aproximadamente \*\*98,7 mil\*\*  
 
-3\. Execute o notebook em `02\_silver/notebooks`
+\- Ticket médio por pedido: aproximadamente \*\*R$ 4,5 mil\*\*  
 
-4\. Carregue os dados tratados no PostgreSQL
+\- Estado com maior faturamento: \*\*São Paulo\*\*  
 
-5\. Execute os scripts SQL da camada Gold
+\- Categoria líder em faturamento: \*\*Health \& Beauty\*\*  
 
-6\. Abra o arquivo Power BI para visualizar o dashboard
+
+
+---
+
+
+
+\## ▶️ Como Reproduzir o Projeto
+
+
+
+Para executar este projeto localmente, siga os passos abaixo:
+
+
+
+1\. Baixe os dados brutos no Kaggle:  
+
+&nbsp;  https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
+
+
+
+2\. Extraia os arquivos CSV e mova para o diretório:  
+
+&nbsp;  `01\_bronze/olist\_raw/`
+
+
+
+3\. Execute o notebook de tratamento e análise em:  
+
+&nbsp;  `02\_silver/notebooks/01\_eda\_limpeza.ipynb`
+
+
+
+4\. Importe os dados tratados para um banco PostgreSQL
+
+
+
+5\. Execute os scripts SQL disponíveis em:  
+
+&nbsp;  `03\_gold/sql/`
+
+
+
+6\. Abra o arquivo do Power BI para visualizar o dashboard final
+
+
+
+---
 
 
 
