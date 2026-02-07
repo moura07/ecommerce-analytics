@@ -49,44 +49,44 @@ https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 ## 📁 Estrutura do Projeto
 
 ecommerce-analytics/
-- │
-- ├── 01_bronze/ # Camada de dados brutos (Raw)
-- │ ├── olist_raw/ # Arquivos CSV originais Kaggle (não versionados)
-- │ │ ├── olist_customers_dataset.csv
-- │ │ ├── olist_orders_dataset.csv
-- │ │ ├── olist_order_items_dataset.csv
-- │ │ ├── olist_order_payments_dataset.csv
-- │ │ ├── olist_products_dataset.csv
-- │ │ └── product_category_name_translation.csv
-- │ │
-- │ ├── .gitkeep # Mantém a estrutura versionada
-- │ └── README.md # Documentação da camada Bronze
-- │
-- ├── 02_silver/ # Camada de dados tratados
-- │ ├── notebooks/ # Notebooks de análise e limpeza
-- │ │ └── 01_eda_limpeza.ipynb
-- │ │
-- │ ├── olist_processed/ # Dados processados e padronizados
-- │ │ ├── fato_itens.csv
-- │ │ ├── kpi_categoria.csv
-- │ │ ├── kpi_estado.csv
-- │ │ └── kpi_mensal.csv
-- │ │
-- │ └── README.md # Documentação da camada Silver
-- │
-- ├── 03_gold/ # Camada analítica final
-- │ ├── sql/ # Scripts para geração de KPIs
-- │ │ ├── 01_kpis_gerais.sql
-- │ │ ├── 02_receita_mensal.sql
-- │ │ └── 03_receita_por_estado.sql
-- │ │
-- │ ├── power_bi/ # Dashboard final
-- │ │ └── dashboard.pbix
-- │ │
-- │ └── README.md # Documentação da camada Gold
-- │
-- ├── .gitignore # Arquivos ignorados pelo Git
-- └── README.md # Documentação principal do projeto
+│
+├── 01_bronze/ # Camada de dados brutos (Raw)
+│ ├── olist_raw/ # Arquivos CSV originais Kaggle (não versionados)
+│ │ ├── olist_customers_dataset.csv
+│ │ ├── olist_orders_dataset.csv
+│ │ ├── olist_order_items_dataset.csv
+│ │ ├── olist_order_payments_dataset.csv
+│ │ ├── olist_products_dataset.csv
+│ │ └── product_category_name_translation.csv
+│ │
+│ ├── .gitkeep # Mantém a estrutura versionada
+│ └── README.md # Documentação da camada Bronze
+│
+├── 02_silver/ # Camada de dados tratados
+│ ├── notebooks/ # Notebooks de análise e limpeza
+│ │ └── 01_eda_limpeza.ipynb
+│ │
+│ ├── olist_processed/ # Dados processados e padronizados
+│ │ ├── fato_itens.csv
+│ │ ├── kpi_categoria.csv
+│ │ ├── kpi_estado.csv
+│ │ └── kpi_mensal.csv
+│ │
+│ └── README.md # Documentação da camada Silver
+│
+├── 03_gold/ # Camada analítica final
+│ ├── sql/ # Scripts para geração de KPIs
+│ │ ├── 01_kpis_gerais.sql
+│ │ ├── 02_receita_mensal.sql
+│ │ └── 03_receita_por_estado.sql
+│ │
+│ ├── power_bi/ # Dashboard final
+│ │ └── dashboard.pbix
+│ │
+│ └── README.md # Documentação da camada Gold
+│
+├── .gitignore # Arquivos ignorados pelo Git
+└── README.md # Documentação principal do projeto
 
 ---
 
