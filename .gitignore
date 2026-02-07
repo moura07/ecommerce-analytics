@@ -1,0 +1,52 @@
+# =========================
+# Bronze - dados brutos
+# =========================
+
+01_bronze/olist_raw/*
+!01_bronze/olist_raw/README.md
+!01_bronze/olist_raw/.gitkeep
+
+
+# =========================
+# Python / Jupyter
+# =========================
+
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+
+# =========================
+# Power BI (temporários)
+# =========================
+
+*.pbi
+*.pbix.tmp
+*.pbip
+
+
+# =========================
+# Ambientes virtuais
+# =========================
+
+.venv/
+venv/
+env/
+
+
+# =========================
+# Sistema Operacional
+# =========================
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+
+# =========================
+# Logs e temporários
+# =========================
+
+*.log
+*.tmp
