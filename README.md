@@ -48,7 +48,9 @@ https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
 ## 📁 Estrutura do Projeto
 
+```text
 ecommerce-analytics/
+
 │
 ├── 01_bronze/ # Camada de dados brutos (Raw)
 │ ├── olist_raw/ # Arquivos CSV originais Kaggle (não versionados)
