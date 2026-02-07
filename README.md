@@ -89,8 +89,8 @@ ecommerce-analytics/
 │
 ├── .gitignore # Arquivos ignorados pelo Git
 └── README.md # Documentação principal do projeto
-
----
+```
+...
 
 ## 📊 Principais Resultados
 
